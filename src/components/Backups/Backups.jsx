@@ -4,10 +4,10 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 
 
 class Backups extends React.Component {
@@ -15,11 +15,17 @@ class Backups extends React.Component {
     rows: [
       {name: "database-dump.sql", size: 14000, date: "2018-19-19 20:20:20"},
       {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
+      {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
+      {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
+      {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
+      {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
+      {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
+      {name: "database-dump-1.sql", size: 15000, date: "2018-19-19 20:20:20"},
     ]
   }
   render(){
     return (
-      <Grid container spacing={5}>
+      <Grid container>
         <Grid item xs={6}>
           <Table>
             <TableHead>
@@ -34,23 +40,25 @@ class Backups extends React.Component {
               {this.state.rows.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell component="th" scope="row">
-                    {row.name}
+                    <Link to={'/detail'}>{row.name}</Link>
                   </TableCell>
                   <TableCell align="right">{row.size}</TableCell>
                   <TableCell align="right">{row.date}</TableCell>
-                  <TableCell></TableCell>
+                  <TableCell>
+
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </Grid>
         <Grid item xs={3}>
-          <Paper elevation={0}>
-            <Button variant="outlined" color="primary">
-              Create backup
+          <div style={{ padding: 20, margin: 20 }}>
+            <Button variant="outlined" color="primary" onClick={this.props.createBackup}>
               <Icon>add</Icon>
+              Create backup
             </Button>
-          </Paper>
+          </div>
         </Grid>
       </Grid>
     )

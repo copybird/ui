@@ -1,11 +1,11 @@
 import React from 'react';
 
+import Backup from '../../components/Backup/Backup';
+
 
 class BackupContainer extends React.Component {
   render() {
-    return (
-      <h1>List</h1>
-    )
+    return (<Backup />)
   }
 }
 
