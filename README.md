@@ -1,8 +1,5 @@
+![CopyBird logo](https://avatars2.githubusercontent.com/u/52037604?s=200&v=4)
 # CopyBird UI
-
-<div>
-  <img src="https://avatars2.githubusercontent.com/u/52037604?s=200&v=4" height="80" Hspace="0" Vspace="0" align="right"/>
-</div>
 
 In the project directory, you can run:
 
